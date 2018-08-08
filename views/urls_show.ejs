@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>url show</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <% include ./partials/_header %>
+    </header>
+      <h1>ShortURL: <%= shortURL %></h1>%>
+      <h2><%= longURL %></h2>
+
+
+      <form action="/urls/<%=shortURL%>" method="POST">
+        <div class="form-group">
+          <input id="longURL" type="text" name="longURL">
+          <button type="submit" class="btn btn-danger">Update</button>
+        </div>
+      </form>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyApp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="container">
+  <header>
+    <% include ./partials/_header %>
+  </header>
+    <% for(var i in urls) { %>
+      <form method="POST" action="/urls/<%=i%>/delete">
+        <p><%= i %> -> <a href="#"> <%= urls[i] %></a>
+        <a href="/urls/<%= i %>">Edit</a>
+        <button type="submit" value="Delete"> Delete </button>
+        </p>
+      </form>
+
+    <% } %>
+  </div>
+</body>
+</html>
