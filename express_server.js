@@ -91,9 +91,11 @@ app.post("/urls/:id/delete", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  console.log('input: ', req.body.username);
   res.cookie('username', req.body.username);
-  console.log('cookies: ', req.cookies);
+  res.redirect(`/urls`);
+});
 
+app.post("/logout", (req, res) => {
+  res.clearCookie('username', req.cookies);
   res.redirect(`/urls`);
 });

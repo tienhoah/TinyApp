@@ -3,4 +3,14 @@
   <input id="username" type="text" name="username">
   <button type="submit" value="Submit">Log In</button>
 </form>
-<h2><%=username%></h2>
+
+<% if(!username) { %>
+  <h2>Please enter your username</h2>
+
+<% } else{ %>
+  <h2><%=username%></h2>
+  <form action="/logout" method="POST">
+    <button type="submit" value="Submit">Log Out</button>
+<% } %>
+
+
