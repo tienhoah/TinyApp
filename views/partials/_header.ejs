@@ -1,16 +1,18 @@
-<h1>Tiny App</h1>
-<form action="/login" method="POST">
-  <input id="username" type="text" name="username">
-  <button type="submit" value="Submit">Log In</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Head</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>Tiny App</h1>
+    <a class="btn btn-primary" href="/login" role="button">Log In</a>
+    <a class="btn btn-primary" href="/register" role="button">Register</a>
+  </div>
+</body>
+</html>
 
-<% if(!username) { %>
-  <h2>Please enter your username</h2>
 
-<% } else{ %>
-  <h2><%=username%></h2>
-  <form action="/logout" method="POST">
-    <button type="submit" value="Submit">Log Out</button>
-<% } %>
 
 

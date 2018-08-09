@@ -6,22 +6,18 @@
 
 </head>
 <body>
-
   <div class="container">
     <header>
       <% include ./partials/_header %>
     </header>
       <h1>ShortURL: <%= shortURL %></h1>%>
       <h2><%= longURL %></h2>
-
-
       <form action="/urls/<%=shortURL%>" method="POST">
         <div class="form-group">
           <input id="longURL" type="text" name="longURL">
-          <button type="submit" class="btn btn-danger">Update</button>
+          <button type="submit" class="btn btn-success">Update</button>
         </div>
       </form>
-
-
+  </div>
 </body>
 </html>
