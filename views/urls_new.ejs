@@ -3,13 +3,26 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
-  <body style="font-size:20px; padding:50px;">
-    <div class="container">
-      <form action="/urls" method="POST" style="margin:150px;">
-        <label for="longURL">Enter a URL:</label>
-        <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
-        <input type="submit" value="Submit">
-      </form>
-    </div>
+  <body">
+      <% if (loggedIn) { %>
+      <div class="container">
+        <div class="jumbotron">
+        <h1>Add New Url</h1>
+          <form action="/urls" method="POST">
+            <label for="longURL">Enter https:// </label>
+            <input type="text" class="form-control" name="longURL" aria-describedby="httpHelp" placeholder="https://">
+            <br>
+            <button type="submit" class="btn btn-success"> Add </button>
+          </form>
+        </div>
+        <% } else { %>
+        <div class="container">
+          <header>
+            <% include ./partials/_header %>
+          </header>
+          <p>You are not logged in to use this feature. Please Sign In!</p>
+        </div>
+      </div>
+      <% } %>
   </body>
 </html>

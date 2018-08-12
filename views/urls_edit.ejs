@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body">
+    <div class="container">
+      <form action="/urls" method="POST">
+        <div class="form-group">
+          <label for="longURL">Enter http: </label>
+          <input type="text" class="form-control" name="longURL" aria-describedby="httpHelp" placeholder="https://">
+          <small id="httpHelp" class="form-text text-muted">https:// already included.</small>
+          <button type="submit" value="Update" class="btn btn-success"> Update </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

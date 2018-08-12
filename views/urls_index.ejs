@@ -6,18 +6,36 @@
 </head>
 
 <body>
-  <div class="container">
-  <header>
-    <% include ./partials/_header %>
-  </header>
-    <% for(var i in urls) { %>
-      <form method="POST" action="/urls/<%=i%>/delete">
-        <p><%= i %> -> <a href="#"> <%= urls[i] %></a>
-        <a class="btn btn-light" href="/urls/<%= i %>" role="button">Edit</a>
-        <button type="submit" class="btn btn-outline-danger" value="Delete">Delete</button>
-        </p>
+  <% if (loggedIn) { %>
+    <div class="p-3 mb-2 bg-dark text-white"><h1 class="display-3 text-center">Welcome to Tiny App</h1></div>
+    <div class="container">
+    <h1><%= userEmail %></h1>
+      <form action="/logout" method="POST">
+        <button type="submit" class="btn btn-dark" >Log Out</button>
       </form>
-    <% } %>
+      <br>
+      <h3 class="font-weight-bold"><u>Your Urls List:</u></h3>
+      <% for(var i in userURL) { %>
+        <form method="POST" action="/urls/<%=i%>/delete">
+          <h3>
+            <%= i %>
+            <small class="text-muted"><a href="/u/<%= i %>"> <%= userURL[i] %> </a></small>
+            <a class="btn btn-light" href="/urls/<%= i %>" role="button">Edit</a>
+            <button type="submit" class="btn btn-outline-danger" value="Delete">Delete</button>
+          </h3>
+        </form>
+      <% } %>
+      <a href="/urls/new"> Shorten URL</a>
   </div>
+  <% } else { %>
+  <dir class="container">
+    <header>
+      <% include ./partials/_header %>
+    </header>
+    <body>
+      <p class="font-italic">Thanks for using Smaller Tiny App!</p>
+    </body>
+  </div>
+  <% } %>
 </body>
 </html>

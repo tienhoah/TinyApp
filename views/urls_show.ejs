@@ -6,18 +6,27 @@
 
 </head>
 <body>
-  <div class="container">
-    <header>
-      <% include ./partials/_header %>
-    </header>
-      <h1>ShortURL: <%= shortURL %></h1>%>
+    <% if (loggedIn) { %>
+    <div class="container">
+      <div class="jumbotron">
+      <h1><%= shortURL %></h1>
       <h2><%= longURL %></h2>
-      <form action="/urls/<%=shortURL%>" method="POST">
-        <div class="form-group">
-          <input id="longURL" type="text" name="longURL">
-          <button type="submit" class="btn btn-success">Update</button>
-        </div>
-      </form>
+        <form method="POST" action="/urls/<%=shortURL%>">
+          <label for="longURL">Enter new long URL: </label>
+          <input type="text" class="form-control" name="longURL" aria-describedby="httpHelp" placeholder="https://">
+          <br>
+          <button type="submit" value="Update" class="btn btn-success"> Update </button>
+        </form>
+      </div>
+    </div>
+    <% } else { %>
+    <div class="container">
+      <header>
+        <% include ./partials/_header %>
+      </header>
+      <p>You are not logged in to use this feature. Please Sign In!</p>
+    </div>
+    <% } %>
   </div>
 </body>
 </html>
