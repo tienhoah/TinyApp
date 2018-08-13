@@ -5,10 +5,10 @@ Tiny app is a full stack web application built with Node and Express that allows
 
 ## Final Product
 
-!["Screeshot of URLs page"](#)
-!["Screeshot of Register page"](#)
-!["Screeshot of Add New URL page"](#)
-!["Screeshot of Edit URL page"](#)
+!["Screeshot of Register page"](https://github.com/tienhoah/TinyApp/blob/master/docs/register-page.png?raw=true)
+!["Screeshot of URLs page"](https://github.com/tienhoah/TinyApp/blob/master/docs/urls-page.png?raw=true)
+!["Screeshot of Add New URL page"](https://github.com/tienhoah/TinyApp/blob/master/docs/urls-new.png?raw=true)
+!["Screeshot of Edit URL page"](https://github.com/tienhoah/TinyApp/blob/master/docs/urls-edit.png?raw=true)
 
 
 ## Dependencies
